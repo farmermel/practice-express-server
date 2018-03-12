@@ -1,6 +1,8 @@
+const GOT = require('./data');
 const express = require('express');
 const app = express();
 var path = require('path');
+
 
 const urlLogger = (request, response, next) => {
   console.log('RequestURL: ', request.url);
@@ -20,7 +22,7 @@ app.get('/', (request, response) => {
 });
 
 app.get('/json', (request, response) => {
-  response.status(200).json({'name': 'Mel'})
+  response.status(200).json(GOT)
 })
 
 app.get('/plant', (request, response) => {
